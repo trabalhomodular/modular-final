@@ -32,4 +32,8 @@ private ArrayList<Funcionario> funcionarios;
 		}
 		return null;
 	}
+	
+	public ArrayList<Funcionario> getLista(){
+		return funcionarios;
+	}
 }

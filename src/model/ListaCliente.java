@@ -32,4 +32,7 @@ public class ListaCliente {
 		return null;
 	}
 
+	public ArrayList<Cliente> getLista(){
+		return clientes;
+	}
 }

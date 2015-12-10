@@ -24,7 +24,7 @@ private ArrayList<OrdemServico> ordemServico;
 		return aux;
 	}
 	
-	public OrdemServico buscaFuncionario(int id){
+	public OrdemServico buscaOS(int id){
 		for (OrdemServico os : ordemServico){
 			if (os.getId() == id){
 				return os;
@@ -33,4 +33,7 @@ private ArrayList<OrdemServico> ordemServico;
 		return null;
 	}
 
+	public ArrayList<OrdemServico> getLista(){
+		return ordemServico;
+	}
 }
