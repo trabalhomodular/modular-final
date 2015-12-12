@@ -169,7 +169,9 @@ public class JanelaAcompanhamentoCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Selecionar uma linha!");
         }
         else if(jTable1.getValueAt(jTable1.getSelectedRow(), 3).equals("Aguardando Aprovação do Cliente")){
-            JanelaFaturadoServico orcamento = new JanelaFaturadoServico(1);
+        	OrdemServico os = new OrdemServico();
+        	//Buscar Ordem de Servico no banco e popular variável
+            JanelaFaturadoServico orcamento = new JanelaFaturadoServico(1, os);
             orcamento.setVisible(true);
             this.dispose();
         }

@@ -14,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Cliente;
+import model.OrdemServico;
 
 
 public class JanelaPagamento extends javax.swing.JFrame {
@@ -21,7 +22,10 @@ public class JanelaPagamento extends javax.swing.JFrame {
     /**
      * Creates new form Janela
      */
-    public JanelaPagamento() {
+	private OrdemServico os;
+	
+    public JanelaPagamento(OrdemServico os) {
+    	this.os = os;
         initComponents();
         this.setLocationRelativeTo(this);
     }
@@ -205,7 +209,7 @@ public class JanelaPagamento extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Completar os campos!");
         }
         else {
-            JanelaAcompanhamentoTecnico janela = new JanelaAcompanhamentoTecnico(1);
+            JanelaAcompanhamentoTecnico janela = new JanelaAcompanhamentoTecnico(os.getFuncionario());
             janela.setVisible(true);
             this.dispose();
         }
@@ -214,7 +218,7 @@ public class JanelaPagamento extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        JanelaAcompanhamentoTecnico janela = new JanelaAcompanhamentoTecnico(1);
+        JanelaAcompanhamentoTecnico janela = new JanelaAcompanhamentoTecnico(os.getFuncionario());
         janela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -226,48 +230,6 @@ public class JanelaPagamento extends javax.swing.JFrame {
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JanelaPagamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JanelaPagamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JanelaPagamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JanelaPagamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JanelaPagamento().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
