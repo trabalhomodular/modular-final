@@ -1,12 +1,17 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaCliente {
-	private ArrayList<Cliente> clientes;
+	private List<Cliente> clientes;
 	
 	public ListaCliente(){
 		clientes = new ArrayList<>();
+	}
+	
+	public ListaCliente(List<Cliente> clientes){
+		this.clientes = clientes;
 	}
 	
 	public boolean insereCliente(Cliente cli){
@@ -32,7 +37,7 @@ public class ListaCliente {
 		return null;
 	}
 
-	public ArrayList<Cliente> getLista(){
+	public List<Cliente> getLista(){
 		return clientes;
 	}
 }

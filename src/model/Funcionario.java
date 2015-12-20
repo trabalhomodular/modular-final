@@ -5,12 +5,12 @@ public class Funcionario {
 	private String nome;
 	private String email;
 	private String telefone;
-	private int habilitacao;
+	private Habilitacao habilitacao;
 	
 	public Funcionario() {
 	}
 	
-	public Funcionario(int id, String nome, String email, String telefone, int habilitacao) {
+	public Funcionario(int id, String nome, String email, String telefone, Habilitacao habilitacao) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
@@ -50,11 +50,15 @@ public class Funcionario {
 		this.telefone = telefone;
 	}
 
-	public int getHabilitacao() {
+	public Habilitacao getHabilitacao() {
 		return habilitacao;
 	}
 
-	public void setHabilitacao(int habilitacao) {
+	public void setHabilitacao(Habilitacao habilitacao) {
 		this.habilitacao = habilitacao;
+	}
+	
+	public String toString() {
+		return "[" + id + "] " + nome; 
 	}
 }

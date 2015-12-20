@@ -1,14 +1,19 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaFuncionario {
-private ArrayList<Funcionario> funcionarios;
+private List<Funcionario> funcionarios;
 	
 	public ListaFuncionario(){
 		funcionarios = new ArrayList<>();
 	}
 	
+	public ListaFuncionario(List<Funcionario> funcionarios) {
+		this.funcionarios = funcionarios;
+	}
+
 	public boolean insereFuncionario(Funcionario func){
 		return funcionarios.add(func);
 	}
@@ -33,7 +38,7 @@ private ArrayList<Funcionario> funcionarios;
 		return null;
 	}
 	
-	public ArrayList<Funcionario> getLista(){
+	public List<Funcionario> getLista(){
 		return funcionarios;
 	}
 }

@@ -1,15 +1,32 @@
 package model;
 
+import java.sql.SQLException;
+import java.util.List;
+
+import dao.ClienteDAO;
+import dao.FuncionarioDAO;
+import dao.StatusOSDAO;
+import util.SqliteUtil;
+
 public class Empresa {
 	private ListaOS ordens;
 	private ListaCliente clientes;
 	private ListaFuncionario funcionarios;
 	
-	public Empresa(ListaOS ordens, ListaCliente clientes, ListaFuncionario funcionarios) {
+	private List<StatusOs> statusOs;
+	
+	private SqliteUtil sqlUtil;
+	
+	public Empresa(SqliteUtil sqlUtil) throws SQLException {
 		super();
-		this.ordens = ordens;
-		this.clientes = clientes;
-		this.funcionarios = funcionarios;
+		this.sqlUtil = sqlUtil;
+		inicializaListas();
+	}
+
+	private void inicializaListas() throws SQLException {
+		clientes = new ListaCliente(new ClienteDAO(sqlUtil).selectAll());
+		funcionarios = new ListaFuncionario(new FuncionarioDAO(sqlUtil).selectAll());
+		statusOs = new StatusOSDAO(sqlUtil).selectAll();
 	}
 
 	public ListaOS getOrdens() {
@@ -22,6 +39,14 @@ public class Empresa {
 
 	public ListaFuncionario getFuncionarios() {
 		return funcionarios;
+	}
+	
+	public SqliteUtil getSqlUtil() {
+		return sqlUtil;
+	}
+	
+	public List<StatusOs> getListaStatusOs() {
+		return statusOs;
 	}
 	
 	public boolean insere(Object item){

@@ -4,8 +4,7 @@ public class Habilitacao {
 	private int id;
 	private String tipo;
 	
-	public Habilitacao() {
-		
+	public Habilitacao() {		
 	}
 
 	public Habilitacao(int id, String tipo) {
@@ -28,5 +27,8 @@ public class Habilitacao {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
+	
+	public String toString() {
+		return tipo;
+	}
 }
